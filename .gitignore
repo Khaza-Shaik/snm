@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+flask_session/
+instance/
+.pytest_cache/
+.vscode/
+.idea/
+*.sql
+*.xlsx

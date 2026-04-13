@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="/static/variables.css">
+    <link rel="stylesheet" href="/static/register.css">
 </head>
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    {% for message in messages %}
-      <center><p style="color: blue;" >{{message}}</p></center>
-    {% endfor %}
-    
-  {% endif %}
-{% endwith %}
 
 <body>
-    <form method="post">
-        <input type="text" name="userotp" placeholder="Enter otp"/><br><br>
-        <button>SUBMIT</button>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
 
-    </form>
-    
+    <div class="container animate-fade">
+        <h2>Verify OTP</h2>
+        <form method="post">
+            <input type="text" name="userotp" placeholder="Enter OTP" required/><br><br>
+            <button type="submit">Verify</button>
+        </form>
+    </div>
 </body>
 </html>
